@@ -14,20 +14,24 @@ public class Square : MonoBehaviour {
         Vector3 pos = this.transform.position;
 
         if (left == null) {
-            lines[0] = IsntantiateLine (new Vector3 (pos.x - space, pos.y, 0)); //left
-            //activate left point
+            lines[0] = IsntantiateLine (new Vector3 (pos.x - space, pos.y, 0), new Vector3 (0, 0, 90f)); //left
+            lines[0].transform.SetParent(this.transform);
         } else
             lines[0] = left.GetComponent<Line> ();
         if (top == null) {
-            lines[1] = IsntantiateLine (new Vector3 (pos.x, pos.y + space, 0)); //top
+            lines[1] = IsntantiateLine (new Vector3 (pos.x, pos.y + space, 0), new Vector3 (0, 0, 0)); //top
+            lines[1].transform.SetParent(this.transform);
         } else
             lines[1] = top.GetComponent<Line> ();
 
-        lines[2] = IsntantiateLine (new Vector3 (pos.x + space, pos.y, 0)); //right
-        lines[3] = IsntantiateLine (new Vector3 (pos.x, pos.y - space, 0)); //bottom
+        lines[2] = IsntantiateLine (new Vector3 (pos.x + space, pos.y, 0), new Vector3 (0, 0, 90f)); //right
+        lines[2].transform.SetParent(this.transform);
+
+        lines[3] = IsntantiateLine (new Vector3 (pos.x, pos.y - space, 0), new Vector3 (0, 0, 0)); //bottom
+        lines[3].transform.SetParent(this.transform);
     }
 
-    Line IsntantiateLine (Vector3 pos) {
-        return GameObject.Instantiate (linePrefab, pos, Quaternion.identity).GetComponent<Line> ();
+    Line IsntantiateLine (Vector3 pos, Vector3 rotation) {
+        return GameObject.Instantiate (linePrefab, pos, Quaternion.Euler(rotation)).GetComponent<Line> ();
     }
 }

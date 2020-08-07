@@ -267,7 +267,11 @@ PrefabInstance:
       objectReference: {fileID: 2863319020726114039, guid: e017a0b475cdb7642977a9434be8532a, type: 3}
     - target: {fileID: 6724915712521561947, guid: dc32da36ed7278e40a5c6405c27ba9f3, type: 3}
       propertyPath: spacing
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6724915712521561947, guid: dc32da36ed7278e40a5c6405c27ba9f3, type: 3}
+      propertyPath: pointPrefab
+      value: 
+      objectReference: {fileID: 659760333091912804, guid: 7e4d2568d63549844b0bbc660230bf91, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc32da36ed7278e40a5c6405c27ba9f3, type: 3}
