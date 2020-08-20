@@ -10,6 +10,10 @@ public class Square : MonoBehaviour {
 
     public const float space = 0.6f;
 
+    private void Start() {
+        LinesManager.instance.OnLineClick += CheckPoint;
+    }
+
     public void IsntantiateLines (Line left, Line top) {
         Vector3 pos = this.transform.position;
 

@@ -15,6 +15,7 @@ public class Line : MonoBehaviour
         //play animation
         sprite.color = Color.blue;
         selected = true;
+        LinesManager.instance.ClickLine(this);
     }
 
     public void ActivateLeftPoint(){

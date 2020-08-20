@@ -1,18 +1,21 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class LinesManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class LinesManager : MonoBehaviour {
+    public static LinesManager instance;
+
+    public event Action<Line> OnLineClick;
+
+    private void Awake () {
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void ClickLine (Line l) {
+        if (OnLineClick != null) {
+            OnLineClick (l);
+        }
     }
 }
