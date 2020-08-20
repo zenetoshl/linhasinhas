@@ -6,9 +6,7 @@ public class Square : MonoBehaviour {
     public Line[] lines = new Line[4];
     public GameObject linePrefab;
 
-    public const float space = 0.5f;
-
-    private void Start () { }
+    public const float space = 0.6f;
 
     public void IsntantiateLines (Line left, Line top) {
         Vector3 pos = this.transform.position;
