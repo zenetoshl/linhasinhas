@@ -6,6 +6,16 @@ public class Line : MonoBehaviour
 {
     public GameObject leftPoint;
     public GameObject rightPoint;
+    public SpriteRenderer sprite;
+
+    public bool selected = false;
+
+    private void OnMouseUpAsButton() {
+        if (selected) return;
+        //play animation
+        sprite.color = Color.blue;
+        selected = true;
+    }
 
     public void ActivateLeftPoint(){
         leftPoint.SetActive(true);
@@ -14,4 +24,6 @@ public class Line : MonoBehaviour
     public void ActivateRightPoint(){
         rightPoint.SetActive(true);
     }
+
+
 }

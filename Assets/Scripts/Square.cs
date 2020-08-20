@@ -5,6 +5,8 @@ using UnityEngine;
 public class Square : MonoBehaviour {
     public Line[] lines = new Line[4];
     public GameObject linePrefab;
+    private bool scored = false;
+    public SpriteRenderer sprite;
 
     public const float space = 0.6f;
 
@@ -31,5 +33,36 @@ public class Square : MonoBehaviour {
 
     Line IsntantiateLine (Vector3 pos, Vector3 rotation) {
         return GameObject.Instantiate (linePrefab, pos, Quaternion.Euler(rotation)).GetComponent<Line> ();
+    }
+
+    private bool ContainsLine(Line l){
+        foreach (Line line in lines)
+        {
+            if(l == line){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool DidScore(){
+        foreach (Line line in lines)
+        {
+            if(!line.selected){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void CheckPoint(Line line){
+        if (scored || !ContainsLine(line)){
+            return;
+        }
+
+        if(DidScore()){
+            scored = true;
+            sprite.color = Color.blue;
+        }
     }
 }

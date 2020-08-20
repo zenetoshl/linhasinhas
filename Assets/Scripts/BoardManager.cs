@@ -8,7 +8,6 @@ public class BoardManager : MonoBehaviour {
     public float spacing;
     public Square[, ] squares;
     public GameObject squarePrefab;
-
     private Vector3 firstPos;
 
     public GameObject pointPrefab;

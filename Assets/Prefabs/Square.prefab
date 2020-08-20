@@ -101,3 +101,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   linePrefab: {fileID: 1796526396914733257, guid: 8715787f1f40a78419ea02351608bcde, type: 3}
+  sprite: {fileID: 2863319020726114038}
